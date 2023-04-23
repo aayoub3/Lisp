@@ -1,0 +1,13 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Write a function nodups that takes a list and returns a list with any consecutive identical items removed
+
+(defun nodups (lst) 
+(if (null (car (cdr lst))) 
+lst 
+(if (equal (car lst) (car (cdr lst))) 
+(nodups (cdr lst)) 
+(cons (car lst) (nodups (cdr lst))))))
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
