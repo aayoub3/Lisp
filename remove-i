@@ -1,0 +1,13 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Given an input list L and an integer i, returns a copy of L with the ith element deleted. If the length of L is less than i, return L. Name the function (remove-i i L).
+
+(defun remove-i (lst i)
+(if (null lst)
+lst               
+( if (= i 1)
+(cdr lst)
+(cons (car lst) (remove-i (cdr lst) (- i 1))))))
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
