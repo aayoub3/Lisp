@@ -1,0 +1,28 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Write a function occr that takes a list and returns a list of dotted pairs (also called an associative list) consisting of every element in the list and the times it occurs in the list.
+
+(defun occr (lst)
+  (if (null lst)
+      lst
+      (calc lst lst)
+      )
+  )
+
+(defun calc (lst lst-h)
+  (if ( null lst-h )
+      lst-h
+      (cons (cons (car lst-h) (count-fun (car lst-h) lst 0 )  ) (calc lst (cdr (remove (car lst-h) lst-h))))))
+      
+(defun count-fun (curr-element lst output)
+ (if (null lst)
+   output
+ (if (equal curr-element (car lst)) 
+  (count-fun curr-element (cdr lst) (+ output 1))
+ 	(count-fun curr-element (cdr lst) output)
+                )
+            )
+        )
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
