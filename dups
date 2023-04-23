@@ -1,0 +1,19 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Write a function dups that takes a list and a number and duplicates each element the number of times specified by the number argument.
+
+(defun dups (mylst num) 
+  (if (null mylst) 
+	mylst 
+	(dups-h mylst num 0)))
+
+(defun dups-h (lst x counter) 
+  (if (null (car lst))  
+	lst 
+  (if (equal x counter) 
+	(dups-h (cdr lst) x 0) 
+	(cons (car lst) (dups-h lst x (+ counter 1))))))
+
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
