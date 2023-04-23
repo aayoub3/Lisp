@@ -1,0 +1,26 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Takes a list of integers (a_1 a_2 ... a_n) and computes the product of all terms:(a_i - a_j), where i < j
+
+
+(defun product-of-diff (lst)
+(if (null lst)
+1
+(if (null (cdr (cdr lst)))
+(- (car lst) (car (cdr lst)))
+(multi (diff lst (cdr lst) (car (cdr lst))) (car (diff lst (cdr lst) (car (cdr lst))))))))
+
+(defun diff (lst lstCopy currSub)
+(if (null lst)
+lst
+(if (null lstCopy)
+(diff (cdr lst) (cdr(cdr lst)) (car (cdr (cdr lst))))
+(cons (- (car lst) currSub) (diff lst (cdr lstCopy) (car (cdr lstCopy)))))))
+
+(defun multi (lst acc)
+(if (null (car (cdr lst)))
+acc
+(multi (cdr lst) (* acc (car (cdr lst))))))
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
