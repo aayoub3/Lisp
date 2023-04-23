@@ -1,0 +1,44 @@
+// COPYRIGHTS.© ABANOB AYOUB
+// Description: Write a function factorsL that takes a list of numbers and replaces every number with a list of its prime factors.
+
+(defun factorsL (lst)
+  (factorsl-h lst nil))
+
+(defun factorsL-h (lst factList)
+  (if (null lst)
+      factList
+      (cons (prime-lst (get-facto (car lst)) nil) (factorsl-h (cdr lst) nil))))
+
+(defun get-facto (elm)
+  (get-facto-h elm nil 1))
+
+(defun get-facto-h (elm factolst acc)
+  (if (> acc elm)
+      factolst
+      (if (zerop (mod elm acc))
+          (cons acc (get-facto-h elm factolst (+ acc 1)))
+          (get-facto-h elm factolst (+ acc 1)))))
+
+(defun prime-lst (lst prmlst)
+  (if (null lst)
+      prmlst
+      (if (not (null (checkprime (car lst))))
+          (prime-lst (cdr lst) (append prmlst (cons (car lst) nil)))
+          (prime-lst (cdr lst) prmlst))))
+
+(defun checkprime (elm)
+  (if (equal elm 1)
+      nil
+      (checkprime-h elm (- elm 1))))
+
+(defun checkprime-h (elm n)
+  (if (and (> n 1) (zerop (mod elm n)))
+      nil
+      (if (= n 1)
+          T
+          (checkprime-h elm (- n 1)) )))
+
+
+
+// COPYRIGHTS.© ABANOB AYOUB
+// COPYRIGHTS.© ABANOB AYOUB
